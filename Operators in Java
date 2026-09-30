@@ -1,0 +1,8 @@
+int a = 10;
+boolean flag = true;
+
+System.out.println(++a);   // Pre-increment: Increments a to 11, then prints 11
+System.out.println(a++);   // Post-increment: Prints 11, then increments a to 12
+System.out.println(--a);   // Pre-decrement: Decrements a to 11, then prints 11
+System.out.println(a--);   // Post-decrement: Prints 11, then decrements a to 10
+System.out.println(!flag); // Logical complement: Inverts true to false
