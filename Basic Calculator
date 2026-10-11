@@ -1,0 +1,45 @@
+import java.util.Scanner; // Imported to read user input
+
+public class Main {
+
+    // A helper method to check if a number is even or odd
+    public static String checkEvenOrOdd(int number) {
+        if (number % 2 == 0) {
+            return "Even";
+        } else {
+            return "Odd";
+        }
+    }
+
+    // The main method is the entry point of any Java program
+    public static void main(String[] args) {
+        // Create a Scanner object to read text from the console
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Welcome to Java Basics ---");
+
+        // 1. Reading an Integer
+        System.out.print("Enter your first integer: ");
+        int num1 = scanner.nextInt();
+
+        // 2. Reading a Second Integer
+        System.out.print("Enter your second integer: ");
+        int num2 = scanner.nextInt();
+
+        // 3. Simple Arithmetic Operations
+        int sum = num1 + num2;
+        int product = num1 * num2;
+
+        // 4. Displaying Output
+        System.out.println("\n--- Results ---");
+        System.out.println("The Sum of the two numbers is: " + sum);
+        System.out.println("The Product of the two numbers is: " + product);
+
+        // 5. Using the helper method and control flow
+        String num1Status = checkEvenOrOdd(num1);
+        System.out.println("The first number (" + num1 + ") is: " + num1Status);
+
+        // Close the scanner resource to avoid memory leaks
+        scanner.close();
+    }
+}
