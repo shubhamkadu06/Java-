@@ -1,0 +1,30 @@
+// Define the Car class
+class Car {
+    // Fields / Attributes
+    private String brand;
+    private int year;
+
+    // Constructor to initialize the object
+    public Car(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+    }
+
+    // Method to display car details
+    public void displayInfo() {
+        System.out.println("Car Brand: " + brand + ", Year: " + year);
+    }
+}
+
+// Main execution class
+public class MainApp {
+    public static void main(String[] args) {
+        // Instantiate (create) Car objects
+        Car car1 = new Car("Toyota", 2022);
+        Car car2 = new Car("Tesla", 2025);
+
+        // Call methods on the objects
+        car1.displayInfo();
+        car2.displayInfo();
+    }
+}
