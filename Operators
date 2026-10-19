@@ -1,0 +1,64 @@
+public class OperatorDemo {
+    public static void main(String[] args) {
+        
+        // 1. Arithmetic Operators
+        int a = 10;
+        int b = 3;
+        System.out.println("--- Arithmetic Operators ---");
+        System.out.println("Addition (a + b): " + (a + b));        // 13
+        System.out.println("Subtraction (a - b): " + (a - b));     // 7
+        System.out.println("Multiplication (a * b): " + (a * b));  // 30
+        System.out.println("Division (a / b): " + (a / b));        // 3 (integer division drops decimals)
+        System.out.println("Modulo/Remainder (a % b): " + (a % b)); // 1
+        
+        // 2. Unary Operators (Prefix vs Postfix)
+        System.out.println("\n--- Unary Operators ---");
+        int x = 5;
+        System.out.println("Original x: " + x);
+        System.out.println("Postfix increment (x++): " + (x++)); // Prints 5, then x becomes 6
+        System.out.println("After postfix: " + x);              // Prints 6
+        System.out.println("Prefix increment (++x): " + (++x)); // x becomes 7, then prints 7
+        
+        boolean flag = true;
+        System.out.println("Logical NOT (!flag): " + (!flag));   // false
+
+        // 3. Relational / Comparison Operators
+        System.out.println("\n--- Relational Operators ---");
+        System.out.println("Is a equal to b? (a == b): " + (a == b));   // false
+        System.out.println("Is a not equal to b? (a != b): " + (a != b)); // true
+        System.out.println("Is a greater than b? (a > b): " + (a > b));   // true
+
+        // 4. Logical Operators (Short-Circuit)
+        System.out.println("\n--- Logical Operators ---");
+        boolean condition1 = (a > 5);  // true
+        boolean condition2 = (b > 5);  // false
+        System.out.println("AND (condition1 && condition2): " + (condition1 && condition2)); // false
+        System.out.println("OR  (condition1 || condition2): " + (condition1 || condition2)); // true
+
+        // 5. Assignment Operators
+        System.out.println("\n--- Assignment Operators ---");
+        int c = 20;
+        c += 5; // Equivalent to c = c + 5
+        System.out.println("Compound Addition (c += 5): " + c); // 25
+
+        // 6. Ternary Operator
+        System.out.println("\n--- Ternary Operator ---");
+        int max = (a > b) ? a : b; // If true, max = a; if false, max = b
+        System.out.println("The maximum value is: " + max); // 10
+
+        // 7. Type Comparison Operator
+        System.out.println("\n--- Instanceof Operator ---");
+        String text = "Hello Java";
+        boolean isString = text instanceof String;
+        System.out.println("Is 'text' an instance of String?: " + isString); // true
+        
+        // 8. Bitwise Operators
+        System.out.println("\n--- Bitwise Operators ---");
+        int n1 = 5;  // Binary: 0101
+        int n2 = 3;  // Binary: 0011
+        System.out.println("Bitwise AND (n1 & n2): " + (n1 & n2));   // 1  (Binary: 0001)
+        System.out.println("Bitwise OR  (n1 | n2): " + (n1 | n2));   // 7  (Binary: 0111)
+        System.out.println("Bitwise XOR (n1 ^ n2): " + (n1 ^ n2));   // 6  (Binary: 0110)
+        System.out.println("Left Shift  (n1 << 1): " + (n1 << 1));  // 10 (Binary: 1010)
+    }
+}
