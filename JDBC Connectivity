@@ -1,0 +1,36 @@
+import java.sql.*; // Step 1: Import JDBC classes
+
+public class JdbcDemo {
+    public static void main(String[] args) {
+        // Database credentials & connection URL
+        String url = "jdbc:postgresql://localhost:5432/my_database";
+        String user = "username";
+        String password = "password";
+
+        // Query with placeholders to prevent SQL Injection
+        String query = "SELECT id, name FROM employees WHERE department = ?";
+
+        // Step 2 & 3: Establish connection using Try-With-Resources (auto-closes objects)
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+             PreparedStatement pstmt = conn.prepareStatement(query)) { // Step 4: Create Statement
+            
+            // Set query arguments
+            pstmt.setString(1, "Engineering");
+
+            // Step 5: Execute the query
+            try (ResultSet rs = pstmt.executeQuery()) {
+                
+                // Step 6: Process the ResultSet
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String name = rs.getString("name");
+                    System.out.println("ID: " + id + ", Name: " + name);
+                }
+            } // ResultSet auto-closes here
+            
+        } catch (SQLException e) { // Handle database connection errors
+            e.printStackTrace();
+        }
+        // Step 7: Connection and Statement auto-close here securely
+    }
+}
